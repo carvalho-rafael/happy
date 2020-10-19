@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import local from '../images/local.svg'
 
 import { Link } from 'react-router-dom'
-import { FiPlus } from 'react-icons/fi'
+import { FiArrowRight, FiPlus } from 'react-icons/fi'
 
-import { Map, TileLayer } from 'react-leaflet'
+import { Map, Marker, TileLayer, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import mapIcon from '../utils/mapicon';
 
 import '../styles/pages/map.css'
+import api from '../services/api';
+
+interface Orphanage {
+    id: number
+    latitude: number
+    longitude: number
+    name: string
+}
 
 function OrphanagesMap() {
+    const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+
+    useEffect(() => {
+        api.get('orphanages').then(response => {
+            setOrphanages(response.data);
+        })
+    }, [])
+
     return (
         <div id="page-map">
             <aside>
@@ -34,8 +51,24 @@ function OrphanagesMap() {
                     }}
                 >
                     <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                    {orphanages.map(orphanage => {
+                        return (
+                            <Marker
+                                key={orphanage.id}
+                                position={[orphanage.latitude, orphanage.longitude]}
+                                icon={mapIcon}
+                            >
+                                <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
+                                    Nome do orphanage
+                                <Link to="/orphanages/255" >
+                                        <FiArrowRight size="25px" color="rgba(255, 255, 255, .8)" />
+                                    </Link>
+                                </Popup>
+                            </Marker>
+                        )
+                    })}
                 </Map>
-                <Link to="/" className="link-add">
+                <Link to="/orphanages/create" className="link-add">
                     <FiPlus size="30px" color="rgba(0, 0, 0, .6)" />
                 </Link>
             </div>
