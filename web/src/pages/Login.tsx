@@ -6,8 +6,8 @@ import '../styles/pages/login.css'
 import { Context } from '../context/AuthContext'
 
 export default function Login() {
-    const { authenticated, handleLogin, handleLogout } = useContext(Context)
-    console.log(authenticated);
+    const { authenticated, user, handleLogin, handleLogout } = useContext(Context)
+    console.log(authenticated, user);
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -15,9 +15,6 @@ export default function Login() {
     function handleSubmit(event: FormEvent) {
         event.preventDefault()
         handleLogin(email, password)
-        const data = {
-            email
-        }
     }
 
     return (
@@ -35,9 +32,6 @@ export default function Login() {
                 </div>
                 <button className="confirm-button" type="submit">
                     Login
-                </button>
-                <button className="confirm-button" type="button" onClick={handleLogout}>
-                    Logout
                 </button>
             </form>
         </div>

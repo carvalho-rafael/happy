@@ -12,7 +12,11 @@ import { Context } from './context/AuthContext'
 import history from './history'
 
 function CustomRoute({ isPrivate, ...rest }) {
-    const { authenticated } = useContext(Context)
+    const { loading, authenticated } = useContext(Context)
+
+    if (loading) {
+        return <p>Loading...</p>
+    }
 
     if(isPrivate && !authenticated) {
         return <Redirect to="/login" />

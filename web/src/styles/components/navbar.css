@@ -1,0 +1,45 @@
+
+aside.app-navbar {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background: #ffd666;
+    padding: 0 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  aside.app-navbar .content .logout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  aside.app-navbar .content .logout-container a{
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  aside.app-navbar button {
+    width: 48px;
+    height: 48px;
+  
+    border: 0;
+  
+    background: #ffc118;
+    border-radius: 16px;
+  
+    cursor: pointer;
+  
+    transition: background-color 0.2s;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  aside.app-navbar button:hover {
+    background: #dca100;
+  }
