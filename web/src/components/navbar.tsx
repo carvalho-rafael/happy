@@ -19,9 +19,9 @@ export default function NavBar() {
         {authenticated
           ? (<div className="logout-container">
             <p>Welcome, {user.email}!</p>
-            <a type="button" onClick={handleLogout}>
+            <span onClick={handleLogout}>
               Logout
-        </a>
+            </span>
           </div>
           ) : (
             <Link to="/login">

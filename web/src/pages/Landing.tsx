@@ -19,9 +19,9 @@ function Landing() {
             {authenticated
               ? (<div className="logout-container">
                 <p>Welcome, {user.email}!</p>
-                <a type="button" onClick={handleLogout}>
+                <span onClick={handleLogout}>
                   Logout
-                </a>
+                </span>
               </div>
               ) : (
                 <Link type="button" to="/login" className="link-login">

@@ -1,12 +1,12 @@
 import React, { FormEvent, useState, useContext } from 'react'
 
-import mapMarkerImg from '../images/local.svg';
+import logo from '../images/logo.svg';
 import '../styles/pages/login.css'
 
 import { Context } from '../context/AuthContext'
 
 export default function Login() {
-    const { authenticated, user, handleLogin, handleLogout } = useContext(Context)
+    const { authenticated, user, handleLogin } = useContext(Context)
     console.log(authenticated, user);
 
     const [email, setEmail] = useState('')
@@ -19,7 +19,7 @@ export default function Login() {
 
     return (
         <div id="page-login">
-            <img src={mapMarkerImg} alt="Happy" className="icon" />
+            <img src={logo} alt="Happy" className="icon" />
 
             <form onSubmit={handleSubmit} className="login-form">
                 <div className="input-block">

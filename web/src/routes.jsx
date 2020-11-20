@@ -31,8 +31,8 @@ function Routes() {
             <Switch>
                 <CustomRoute path="/" component={Landing} exact />
                 <CustomRoute isPrivate path="/app" component={OrphanagesMap} />
-                <CustomRoute path="/orphanages/create" component={CreateOrphanage} />
-                <CustomRoute path="/orphanages/:id" component={Orphanage} />
+                <CustomRoute isPrivate path="/orphanages/create" component={CreateOrphanage} />
+                <CustomRoute isPrivate path="/orphanages/:id" component={Orphanage} />
                 <CustomRoute path="/login" component={Login} />
             </Switch>
         </Router>
