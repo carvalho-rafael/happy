@@ -13,6 +13,9 @@ export default class Orphanage {
     @Column()
     password: string;
 
+    @Column()
+    is_admin: boolean;
+
     @BeforeInsert()
     @BeforeUpdate()
     hashPassword() {
