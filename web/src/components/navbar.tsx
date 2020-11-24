@@ -12,9 +12,17 @@ export default function NavBar() {
 
   return (
     <aside className="app-navbar">
-      <button type="button" onClick={goBack}>
-        <FiArrowLeft size={24} color="#FFF" />
-      </button>
+      <div className="actions">
+        <button type="button" onClick={goBack}>
+          <FiArrowLeft size={24} color="#FFF" />
+        </button>
+        {user.is_admin
+        ? (
+          <Link to="/dashboard/orphanages" className="dashboard-link">
+            Dashboard
+        </Link>
+        ) : null}
+      </div>
       <div className="content">
         {authenticated
           ? (<div className="logout-container">

@@ -9,6 +9,7 @@ aside.app-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 99;
   }
 
   aside.app-navbar .content .logout-container {
@@ -21,8 +22,17 @@ aside.app-navbar {
     font-size: 14px;
     cursor: pointer;
   }
+  
+  aside.app-navbar .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-  aside.app-navbar button {
+  aside.app-navbar .actions .dashboard-link {
+    margin-left: 10px;
+  }
+  aside.app-navbar .actions button {
     width: 48px;
     height: 48px;
   

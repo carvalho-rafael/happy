@@ -1,0 +1,80 @@
+#dashboard-page {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    color: #4D6F80;
+}
+
+#dashboard-page aside {
+    width: 300px;
+    height: 100vh;
+    padding-top: 90px;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    background-color:  #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dashboard-page aside button{
+    display: block;
+    margin-top: 20px;
+    cursor: pointer;
+    background: #ffc118 ;
+    padding: 8px 12px;
+    opacity: .7;
+
+    border: 0;
+    border-radius: 16px;
+}
+
+#dashboard-page aside button:nth-child(1){
+    background-color: #36CF82;
+}
+
+#dashboard-page aside button.active{
+    opacity: 1;
+    transition: all 1s;
+}
+
+#dashboard-page .main-container {
+    width: 100%;
+    position: relative;
+    margin-left: 320px;
+    margin-right: 20px;
+}
+#dashboard-page .main-container .card-list{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#dashboard-page .main-container .card {
+    list-style: none;
+    color: #4D6F80;
+    text-decoration: none;
+    cursor: pointer;
+    width: 500px;
+    padding: 8px;
+    margin: 10px;
+    background-color: #D3D9DC;
+    font-size: 14px;
+    display: flex;
+}
+
+#dashboard-page .main-container .card:hover {
+    background-color:   #BDC3C6;;
+}
+
+#dashboard-page .main-container .card img{
+    width: 130px;
+    height: 130px;
+    padding: 10px;
+    object-fit: cover;
+}

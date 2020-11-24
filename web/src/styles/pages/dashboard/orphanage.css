@@ -1,0 +1,23 @@
+#page-orphanage .button-select{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#page-orphanage .button-select button{
+    padding: 22px;
+    color: #ffffff;
+    border: 1px solid #D3E2E5;
+    cursor: pointer;
+    font-weight: bold;
+
+    border: 0;
+    border-radius: 16px;
+}
+
+#page-orphanage .button-select .reject-button{
+    background: #ff3a31;
+}
+#page-orphanage .button-select .accept-button{
+    background: #4ed964;
+}

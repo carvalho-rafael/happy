@@ -10,12 +10,18 @@ import OrphanagesMap from './pages/OrphanagesMap';
 import { Context } from './context/AuthContext'
 
 import history from './history'
+import Orphanages from './pages/dashboard/index';
+import adminOrphanage from './pages/dashboard/Orphanage';
 
-function CustomRoute({ isPrivate, ...rest }) {
-    const { loading, authenticated } = useContext(Context)
+function CustomRoute({ isPrivate, isAdmin, ...rest }) {
+    const { loading, authenticated, user } = useContext(Context)
 
     if (loading) {
         return <p>Loading...</p>
+    }
+
+    if(isAdmin && !user.is_admin) {
+        return <Redirect to="/" />
     }
 
     if(isPrivate && !authenticated) {
@@ -34,6 +40,9 @@ function Routes() {
                 <CustomRoute isPrivate path="/orphanages/create" component={CreateOrphanage} />
                 <CustomRoute isPrivate path="/orphanages/:id" component={Orphanage} />
                 <CustomRoute path="/login" component={Login} />
+
+                <CustomRoute isAdmin path="/dashboard/orphanages" component={Orphanages} exact />
+                <CustomRoute isAdmin path="/dashboard/orphanages/:id" component={adminOrphanage} />
             </Switch>
         </Router>
     )
