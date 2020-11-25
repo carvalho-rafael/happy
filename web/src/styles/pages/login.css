@@ -1,6 +1,5 @@
 #page-login {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -8,12 +7,39 @@
     background: linear-gradient(329.54deg, #29B6D1 0%, #00C7C7 100%);
 }
 
+#page-login .left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#page-login .form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #4D6F80;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+#page-login .form-container h1{
+  margin-bottom: 20px;
+}
+
 #page-login .icon {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 form.login-form {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
 }
 
 form.login-form .input-block + .input-block {
@@ -22,14 +48,13 @@ form.login-form .input-block + .input-block {
   
   form.login-form .input-block label {
     display: flex;
-    color: #fff;
     margin-bottom: 8px;
     line-height: 24px;
   }
   
   form.login-form .input-block input {
     width: 100%;
-    height: 64px;
+    height: 48px;
     padding: 0 16px;
     background: #F5F8FA;
     border: 1px solid #D3E2E5;
@@ -45,7 +70,7 @@ form.login-form .input-block + .input-block {
     height: 64px;
     border: 0;
     cursor: pointer;
-    background: #808080;
+    background: #00C7C7;
     border-radius: 20px;
     color: #FFFFFF;
     font-weight: 800;
@@ -61,3 +86,8 @@ form.login-form .input-block + .input-block {
     background: #696969;
   }
   
+  @media(max-width: 800px) {
+    #page-login {
+      flex-direction: column;
+    }
+  }
